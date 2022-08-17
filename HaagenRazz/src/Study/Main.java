@@ -6,32 +6,22 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-   public static void main(String[] args) throws IOException {
-      
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-         StringBuilder sb = new StringBuilder();
-         
-         int N = Integer.parseInt(bf.readLine());
-         
-         for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N * 5; j++) {
-               sb.append("@");            
-            }
-            sb.append("\n");   
-         }
-      
-         for(int i = 0; i < N * 4; i++) {
-            for(int j = 0; j < N; j++) {
-               sb.append("@");
-            }
-            sb.append("\n");
-         }
-         
-         System.out.println(sb);
-         
-         bf.close(); 
+	public static void main(String[] args) throws IOException {
+		
+		// https://www.acmicpc.net/problem/2440
+		
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-
-   }
-
+		int N = Integer.parseInt(bf.readLine());
+		
+		for(int i = 0; i < N; i++) {
+			for(int j = i + 1; j <= N; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+		
+		bf.close();
+    }
 }
